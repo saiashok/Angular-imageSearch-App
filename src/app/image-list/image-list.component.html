@@ -1,0 +1,13 @@
+
+<input  class="form-control" type="text" [(ngModel)]= "searchQuery" placeholder="Search for Images">
+<button class="btn btn-primary" (click)="searchImages(searchQuery)" type="button">Find Images</button>
+
+<p *ngIf="searching"> Fetching data........</p>
+<div *ngFor="let image of images">
+  <img src="{{image.webformatURL}}">
+  <p>Tags: {{image.tag}}</p>
+  <p>User: {{image.user}}</p>
+  <p>Downloads: {{image.downloads}}</p>
+  <p>favorites: {{image.favorites}}</p>
+</div>
+
